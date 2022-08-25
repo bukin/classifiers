@@ -1,0 +1,41 @@
+{
+  "name": "inetstudio/classifiers",
+  "description": "Package for classifiers",
+  "homepage": "https://github.com/inetstudio/classifiers",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Konstantin Bukin",
+      "email": "bukin@inetstudio.ru"
+    }
+  ],
+  "require": {
+    "inetstudio/admin-panel": "^10.0",
+    "laravel-json-api/laravel": "^2.3",
+    "rebing/graphql-laravel": "^8.2.1",
+    "spatie/data-transfer-object": "^3.0",
+    "spatie/laravel-queueable-action": "^2.14"
+  },
+  "require-dev": {
+    "laravel-json-api/testing": "^1.1",
+    "orchestra/testbench": "^7.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "InetStudio\\ClassifiersPackage\\": "package/src/",
+      "InetStudio\\ClassifiersPackage\\Entries\\": "entities/entries/src/",
+      "InetStudio\\ClassifiersPackage\\Entries\\Tests\\": "entities/entries/tests/src",
+      "InetStudio\\ClassifiersPackage\\Groups\\": "entities/groups/src/",
+      "InetStudio\\ClassifiersPackage\\Groups\\Tests\\": "entities/groups/tests/src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "InetStudio\\ClassifiersPackage\\Infrastructure\\Providers\\ServiceProvider",
+        "InetStudio\\ClassifiersPackage\\Entries\\Infrastructure\\Providers\\ServiceProvider",
+        "InetStudio\\ClassifiersPackage\\Groups\\Infrastructure\\Providers\\ServiceProvider"
+      ]
+    }
+  }
+}

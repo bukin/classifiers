@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        bootstrap="../../../vendor/autoload.php"
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        colors="true"
+        verbose="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+        stopOnFailure="false"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+>
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">entities/entries/src</directory>
+            <directory suffix=".php">entities/groups/src</directory>
+        </include>
+    </coverage>
+    <testsuites>
+        <testsuite name="Entries">
+            <directory suffix="Test.php">./entities/entries/tests/src/Feature/JsonApi</directory>
+            <directory suffix="Test.php">./entities/entries/tests/src/Unit</directory>
+        </testsuite>
+        <testsuite name="Groups">
+            <directory suffix="Test.php">./entities/groups/tests/src/Feature/JsonApi</directory>
+            <directory suffix="Test.php">./entities/groups/tests/src/Unit</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
